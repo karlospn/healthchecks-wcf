@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using HealthChecks.Wcf.Enums;
+﻿using HealthChecks.Wcf.Enums;
 
 namespace HealthChecks.Wcf.IntegrationTest
 {

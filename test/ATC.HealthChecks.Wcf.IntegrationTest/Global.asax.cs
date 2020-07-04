@@ -11,11 +11,12 @@ namespace HealthChecks.Wcf.IntegrationTest
         {
             var builder = new ContainerBuilder();
             builder.RegisterType<Service1>().As<IService1>();
-            builder.RegisterHealthCheckImplementation<MyHealthCheckService>();
+            builder.RegisterType<MyHealthCheckService>();
+            
             var container = builder.Build();
 
             AutofacHostFactory.Container = container;
-            AutofacHostFactory.HostConfigurationAction = HealthCheckExtensions.AddHealthCheckEndpoint(container);
+            AutofacHostFactory.HostConfigurationAction = HealthCheckExtensions.AddHealthCheckEndpoint();
         }
 
         

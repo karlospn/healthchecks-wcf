@@ -4,13 +4,12 @@ using System.Linq;
 using System.Reflection;
 using System.ServiceModel;
 using System.ServiceModel.Description;
-using Autofac;
 
 namespace HealthChecks.Wcf
 {
     public static class HealthCheckExtensions
     {
-        public static Action<ServiceHostBase> AddHealthCheckEndpoint(IContainer container)
+        public static Action<ServiceHostBase> AddHealthCheckEndpoint()
         {
             return serviceHost =>
             {
@@ -21,11 +20,6 @@ namespace HealthChecks.Wcf
             };
         }
 
-        public static void RegisterHealthCheckImplementation<T>(this ContainerBuilder builder) where T : IHealthCheckService
-        {
-            builder.RegisterType<T>();
-        }
-        
         private static void GenerateHealthEndpoint(ServiceHostBase serviceHost)
         {
             var implementedContracts = serviceHost
