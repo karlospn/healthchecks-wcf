@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="HealthChecks.Wcf.IntegrationTest.IService1, HealthChecks.Wcf.IntegrationTest" Factory="Autofac.Integration.Wcf.AutofacServiceHostFactory, Autofac.Integration.Wcf" %>
